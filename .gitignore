@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build output
+client/dist/
+target/
+
+# Environment
+.env
+.env.local
+
+# System
+.DS_Store
+*.log
+.claude/
+.idea/
+.vscode/
+
+# Old Java/Spring Boot files (not part of this project)
+/src/
+pom.xml
+mvnw
+mvnw.cmd
+.mvn/
+HELP.md
+.gitattributes
