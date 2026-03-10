@@ -5,14 +5,14 @@ const BOARD_SQUARES = [
   { position: 0, type: 'go', name: 'Yalla!', nameAr: 'يلا!', description: 'Collect £200 salary as you pass.' },
 
   // Position 1 - Brown group
-  { position: 1, type: 'property', name: 'Old Medina', nameAr: 'المدينة القديمة', city: 'Fez', colorGroup: 'brown',
+  { position: 1, type: 'property', name: 'Old Medina', nameAr: 'المدينة القديمة', city: 'Fez', flag: '🇲🇦', colorGroup: 'brown',
     price: 60, rent: [2, 10, 30, 90, 160, 250], housePrice: 50, mortgageValue: 30 },
 
   // Position 2
   { position: 2, type: 'community_chest', name: 'Sadaqah', nameAr: 'صدقة' },
 
   // Position 3 - Brown group
-  { position: 3, type: 'property', name: 'Camel Souk', nameAr: 'سوق الجمال', city: 'Marrakech', colorGroup: 'brown',
+  { position: 3, type: 'property', name: 'Camel Souk', nameAr: 'سوق الجمال', city: 'Marrakech', flag: '🇲🇦', colorGroup: 'brown',
     price: 60, rent: [4, 20, 60, 180, 320, 450], housePrice: 50, mortgageValue: 30 },
 
   // Position 4
@@ -22,108 +22,108 @@ const BOARD_SQUARES = [
   { position: 5, type: 'airline', name: 'Emirates Airways', nameAr: 'طيران الإمارات', price: 200, mortgageValue: 100 },
 
   // Position 6 - Light Blue group (Palestine)
-  { position: 6, type: 'property', name: 'Beitunia', nameAr: 'بيتونيا', city: 'Palestine', colorGroup: 'lightblue',
+  { position: 6, type: 'property', name: 'Beitunia', nameAr: 'بيتونيا', city: 'Palestine', flag: '🇵🇸', colorGroup: 'lightblue',
     price: 100, rent: [6, 30, 90, 270, 400, 550], housePrice: 50, mortgageValue: 50 },
 
   // Position 7
   { position: 7, type: 'chance', name: 'Inshallah', nameAr: 'إن شاء الله' },
 
   // Position 8 - Light Blue group (Palestine)
-  { position: 8, type: 'property', name: 'Beit Hanina', nameAr: 'بيت حنينا', city: 'Palestine', colorGroup: 'lightblue',
+  { position: 8, type: 'property', name: 'Beit Hanina', nameAr: 'بيت حنينا', city: 'Palestine', flag: '🇵🇸', colorGroup: 'lightblue',
     price: 100, rent: [6, 30, 90, 270, 400, 550], housePrice: 50, mortgageValue: 50 },
 
   // Position 9 - Light Blue group (Palestine)
-  { position: 9, type: 'property', name: 'Turmusayya', nameAr: 'ترمسعيا', city: 'Palestine', colorGroup: 'lightblue',
+  { position: 9, type: 'property', name: 'Turmusayya', nameAr: 'ترمسعيا', city: 'Palestine', flag: '🇵🇸', colorGroup: 'lightblue',
     price: 120, rent: [8, 40, 100, 300, 450, 600], housePrice: 50, mortgageValue: 60 },
 
   // Position 10
   { position: 10, type: 'jail', name: 'Al-Sijn', nameAr: 'السجن', description: 'Just Visiting / In Al-Sijn' },
 
   // Position 11 - Pink group
-  { position: 11, type: 'property', name: 'Alexandria', nameAr: 'الإسكندرية', city: 'Egypt', colorGroup: 'pink',
+  { position: 11, type: 'property', name: 'Alexandria', nameAr: 'الإسكندرية', city: 'Egypt', flag: '🇪🇬', colorGroup: 'pink',
     price: 140, rent: [10, 50, 150, 450, 625, 750], housePrice: 100, mortgageValue: 70 },
 
   // Position 12 - Utility
   { position: 12, type: 'utility', name: 'Oil Well', nameAr: 'بئر النفط', price: 150, mortgageValue: 75 },
 
   // Position 13 - Pink group
-  { position: 13, type: 'property', name: 'Luxor', nameAr: 'الأقصر', city: 'Egypt', colorGroup: 'pink',
+  { position: 13, type: 'property', name: 'Luxor', nameAr: 'الأقصر', city: 'Egypt', flag: '🇪🇬', colorGroup: 'pink',
     price: 140, rent: [10, 50, 150, 450, 625, 750], housePrice: 100, mortgageValue: 70 },
 
   // Position 14 - Pink group
-  { position: 14, type: 'property', name: 'Aswan', nameAr: 'أسوان', city: 'Egypt', colorGroup: 'pink',
+  { position: 14, type: 'property', name: 'Aswan', nameAr: 'أسوان', city: 'Egypt', flag: '🇪🇬', colorGroup: 'pink',
     price: 160, rent: [12, 60, 180, 500, 700, 900], housePrice: 100, mortgageValue: 80 },
 
   // Position 15 - Airline
   { position: 15, type: 'airline', name: 'Qatar Airways', nameAr: 'الخطوط القطرية', price: 200, mortgageValue: 100 },
 
   // Position 16 - Orange group (America)
-  { position: 16, type: 'property', name: 'Bridgeview', nameAr: 'بريدجفيو', city: 'Illinois, USA', colorGroup: 'orange',
+  { position: 16, type: 'property', name: 'Bridgeview', nameAr: 'بريدجفيو', city: 'Illinois, USA', flag: '🇺🇸', colorGroup: 'orange',
     price: 180, rent: [14, 70, 200, 550, 750, 950], housePrice: 100, mortgageValue: 90 },
 
   // Position 17
   { position: 17, type: 'community_chest', name: 'Sadaqah', nameAr: 'صدقة' },
 
   // Position 18 - Orange group (America)
-  { position: 18, type: 'property', name: 'Mokena', nameAr: 'موكينا', city: 'Illinois, USA', colorGroup: 'orange',
+  { position: 18, type: 'property', name: 'Mokena', nameAr: 'موكينا', city: 'Illinois, USA', flag: '🇺🇸', colorGroup: 'orange',
     price: 180, rent: [14, 70, 200, 550, 750, 950], housePrice: 100, mortgageValue: 90 },
 
   // Position 19 - Orange group (America)
-  { position: 19, type: 'property', name: 'Dearborn', nameAr: 'ديربورن', city: 'Michigan, USA', colorGroup: 'orange',
+  { position: 19, type: 'property', name: 'Dearborn', nameAr: 'ديربورن', city: 'Michigan, USA', flag: '🇺🇸', colorGroup: 'orange',
     price: 200, rent: [16, 80, 220, 600, 800, 1000], housePrice: 100, mortgageValue: 100 },
 
   // Position 20
   { position: 20, type: 'free_parking', name: 'Al-Waha', nameAr: 'الواحة', description: 'Free Parking - Rest at the Oasis' },
 
   // Position 21 - Red group
-  { position: 21, type: 'property', name: 'Amman', nameAr: 'عمّان', city: 'Jordan', colorGroup: 'red',
+  { position: 21, type: 'property', name: 'Amman', nameAr: 'عمّان', city: 'Jordan', flag: '🇯🇴', colorGroup: 'red',
     price: 220, rent: [18, 90, 250, 700, 875, 1050], housePrice: 150, mortgageValue: 110 },
 
   // Position 22
   { position: 22, type: 'chance', name: 'Inshallah', nameAr: 'إن شاء الله' },
 
   // Position 23 - Red group
-  { position: 23, type: 'property', name: 'Aqaba', nameAr: 'العقبة', city: 'Jordan', colorGroup: 'red',
+  { position: 23, type: 'property', name: 'Aqaba', nameAr: 'العقبة', city: 'Jordan', flag: '🇯🇴', colorGroup: 'red',
     price: 220, rent: [18, 90, 250, 700, 875, 1050], housePrice: 150, mortgageValue: 110 },
 
   // Position 24 - Red group
-  { position: 24, type: 'property', name: 'Jerash', nameAr: 'جرش', city: 'Jordan', colorGroup: 'red',
+  { position: 24, type: 'property', name: 'Jerash', nameAr: 'جرش', city: 'Jordan', flag: '🇯🇴', colorGroup: 'red',
     price: 240, rent: [20, 100, 300, 750, 925, 1100], housePrice: 150, mortgageValue: 120 },
 
   // Position 25 - Airline
   { position: 25, type: 'airline', name: 'Etihad Airways', nameAr: 'طيران الاتحاد', price: 200, mortgageValue: 100 },
 
   // Position 26 - Yellow group (Khaleej)
-  { position: 26, type: 'property', name: 'Riyadh', nameAr: 'الرياض', city: 'Saudi Arabia', colorGroup: 'yellow',
+  { position: 26, type: 'property', name: 'Riyadh', nameAr: 'الرياض', city: 'Saudi Arabia', flag: '🇸🇦', colorGroup: 'yellow',
     price: 260, rent: [22, 110, 330, 800, 975, 1150], housePrice: 150, mortgageValue: 130 },
 
   // Position 27 - Yellow group (Khaleej)
-  { position: 27, type: 'property', name: 'Dubai', nameAr: 'دبي', city: 'UAE', colorGroup: 'yellow',
+  { position: 27, type: 'property', name: 'Dubai', nameAr: 'دبي', city: 'UAE', flag: '🇦🇪', colorGroup: 'yellow',
     price: 260, rent: [22, 110, 330, 800, 975, 1150], housePrice: 150, mortgageValue: 130 },
 
   // Position 28 - Utility
   { position: 28, type: 'utility', name: 'Desalination Plant', nameAr: 'محطة التحلية', price: 150, mortgageValue: 75 },
 
   // Position 29 - Yellow group (Khaleej)
-  { position: 29, type: 'property', name: 'Mecca', nameAr: 'مكة المكرمة', city: 'Saudi Arabia', colorGroup: 'yellow',
+  { position: 29, type: 'property', name: 'Mecca', nameAr: 'مكة المكرمة', city: 'Saudi Arabia', flag: '🇸🇦', colorGroup: 'yellow',
     price: 280, rent: [24, 120, 360, 850, 1025, 1200], housePrice: 150, mortgageValue: 140 },
 
   // Position 30
   { position: 30, type: 'go_to_jail', name: 'To Al-Sijn!', nameAr: 'إلى السجن!' },
 
   // Position 31 - Green group
-  { position: 31, type: 'property', name: 'Abu Dhabi', nameAr: 'أبوظبي', city: 'UAE', colorGroup: 'green',
+  { position: 31, type: 'property', name: 'Abu Dhabi', nameAr: 'أبوظبي', city: 'UAE', flag: '🇦🇪', colorGroup: 'green',
     price: 300, rent: [26, 130, 390, 900, 1100, 1275], housePrice: 200, mortgageValue: 150 },
 
   // Position 32 - Green group
-  { position: 32, type: 'property', name: 'Muscat', nameAr: 'مسقط', city: 'Oman', colorGroup: 'green',
+  { position: 32, type: 'property', name: 'Muscat', nameAr: 'مسقط', city: 'Oman', flag: '🇴🇲', colorGroup: 'green',
     price: 300, rent: [26, 130, 390, 900, 1100, 1275], housePrice: 200, mortgageValue: 150 },
 
   // Position 33
   { position: 33, type: 'community_chest', name: 'Sadaqah', nameAr: 'صدقة' },
 
   // Position 34 - Green group
-  { position: 34, type: 'property', name: 'Kuwait City', nameAr: 'مدينة الكويت', city: 'Kuwait', colorGroup: 'green',
+  { position: 34, type: 'property', name: 'Kuwait City', nameAr: 'مدينة الكويت', city: 'Kuwait', flag: '🇰🇼', colorGroup: 'green',
     price: 320, rent: [28, 150, 450, 1000, 1200, 1400], housePrice: 200, mortgageValue: 160 },
 
   // Position 35 - Airline
@@ -133,14 +133,14 @@ const BOARD_SQUARES = [
   { position: 36, type: 'chance', name: 'Inshallah', nameAr: 'إن شاء الله' },
 
   // Position 37 - Dark Blue group
-  { position: 37, type: 'property', name: 'Burj Khalifa', nameAr: 'برج خليفة', city: 'Dubai', colorGroup: 'darkblue',
+  { position: 37, type: 'property', name: 'Burj Khalifa', nameAr: 'برج خليفة', city: 'Dubai', flag: '🇦🇪', colorGroup: 'darkblue',
     price: 350, rent: [35, 175, 500, 1100, 1300, 1500], housePrice: 200, mortgageValue: 175 },
 
   // Position 38
   { position: 38, type: 'tax', name: 'Customs Duty', nameAr: 'رسوم جمركية', amount: 100, description: 'Pay £100 luxury tax.' },
 
   // Position 39 - Dark Blue group
-  { position: 39, type: 'property', name: 'Palm Jumeirah', nameAr: 'نخلة جميرا', city: 'Dubai', colorGroup: 'darkblue',
+  { position: 39, type: 'property', name: 'Palm Jumeirah', nameAr: 'نخلة جميرا', city: 'Dubai', flag: '🇦🇪', colorGroup: 'darkblue',
     price: 400, rent: [50, 200, 600, 1400, 1700, 2000], housePrice: 200, mortgageValue: 200 },
 ];
 
