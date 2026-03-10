@@ -21,19 +21,19 @@ const BOARD_SQUARES = [
   // Position 5 - Airline
   { position: 5, type: 'airline', name: 'Emirates Airways', nameAr: 'طيران الإمارات', price: 200, mortgageValue: 100 },
 
-  // Position 6 - Light Blue group
-  { position: 6, type: 'property', name: 'Petra', nameAr: 'البتراء', city: 'Jordan', colorGroup: 'lightblue',
+  // Position 6 - Light Blue group (Palestine)
+  { position: 6, type: 'property', name: 'Beitunia', nameAr: 'بيتونيا', city: 'Palestine', colorGroup: 'lightblue',
     price: 100, rent: [6, 30, 90, 270, 400, 550], housePrice: 50, mortgageValue: 50 },
 
   // Position 7
   { position: 7, type: 'chance', name: 'Inshallah', nameAr: 'إن شاء الله' },
 
-  // Position 8 - Light Blue group
-  { position: 8, type: 'property', name: 'Wadi Rum', nameAr: 'وادي رم', city: 'Jordan', colorGroup: 'lightblue',
+  // Position 8 - Light Blue group (Palestine)
+  { position: 8, type: 'property', name: 'Beit Hanina', nameAr: 'بيت حنينا', city: 'Palestine', colorGroup: 'lightblue',
     price: 100, rent: [6, 30, 90, 270, 400, 550], housePrice: 50, mortgageValue: 50 },
 
-  // Position 9 - Light Blue group
-  { position: 9, type: 'property', name: 'Dead Sea', nameAr: 'البحر الميت', city: 'Jordan', colorGroup: 'lightblue',
+  // Position 9 - Light Blue group (Palestine)
+  { position: 9, type: 'property', name: 'Turmusayya', nameAr: 'ترمسعيا', city: 'Palestine', colorGroup: 'lightblue',
     price: 120, rent: [8, 40, 100, 300, 450, 600], housePrice: 50, mortgageValue: 60 },
 
   // Position 10
@@ -57,19 +57,19 @@ const BOARD_SQUARES = [
   // Position 15 - Airline
   { position: 15, type: 'airline', name: 'Qatar Airways', nameAr: 'الخطوط القطرية', price: 200, mortgageValue: 100 },
 
-  // Position 16 - Orange group
-  { position: 16, type: 'property', name: 'Casablanca', nameAr: 'الدار البيضاء', city: 'Morocco', colorGroup: 'orange',
+  // Position 16 - Orange group (America)
+  { position: 16, type: 'property', name: 'Bridgeview', nameAr: 'بريدجفيو', city: 'Illinois, USA', colorGroup: 'orange',
     price: 180, rent: [14, 70, 200, 550, 750, 950], housePrice: 100, mortgageValue: 90 },
 
   // Position 17
   { position: 17, type: 'community_chest', name: 'Sadaqah', nameAr: 'صدقة' },
 
-  // Position 18 - Orange group
-  { position: 18, type: 'property', name: 'Marrakech', nameAr: 'مراكش', city: 'Morocco', colorGroup: 'orange',
+  // Position 18 - Orange group (America)
+  { position: 18, type: 'property', name: 'Mokena', nameAr: 'موكينا', city: 'Illinois, USA', colorGroup: 'orange',
     price: 180, rent: [14, 70, 200, 550, 750, 950], housePrice: 100, mortgageValue: 90 },
 
-  // Position 19 - Orange group
-  { position: 19, type: 'property', name: 'Tangier', nameAr: 'طنجة', city: 'Morocco', colorGroup: 'orange',
+  // Position 19 - Orange group (America)
+  { position: 19, type: 'property', name: 'Dearborn', nameAr: 'ديربورن', city: 'Michigan, USA', colorGroup: 'orange',
     price: 200, rent: [16, 80, 220, 600, 800, 1000], housePrice: 100, mortgageValue: 100 },
 
   // Position 20
@@ -93,19 +93,19 @@ const BOARD_SQUARES = [
   // Position 25 - Airline
   { position: 25, type: 'airline', name: 'Etihad Airways', nameAr: 'طيران الاتحاد', price: 200, mortgageValue: 100 },
 
-  // Position 26 - Yellow group
+  // Position 26 - Yellow group (Khaleej)
   { position: 26, type: 'property', name: 'Riyadh', nameAr: 'الرياض', city: 'Saudi Arabia', colorGroup: 'yellow',
     price: 260, rent: [22, 110, 330, 800, 975, 1150], housePrice: 150, mortgageValue: 130 },
 
-  // Position 27 - Yellow group
-  { position: 27, type: 'property', name: 'Jeddah', nameAr: 'جدة', city: 'Saudi Arabia', colorGroup: 'yellow',
+  // Position 27 - Yellow group (Khaleej)
+  { position: 27, type: 'property', name: 'Dubai', nameAr: 'دبي', city: 'UAE', colorGroup: 'yellow',
     price: 260, rent: [22, 110, 330, 800, 975, 1150], housePrice: 150, mortgageValue: 130 },
 
   // Position 28 - Utility
   { position: 28, type: 'utility', name: 'Desalination Plant', nameAr: 'محطة التحلية', price: 150, mortgageValue: 75 },
 
-  // Position 29 - Yellow group
-  { position: 29, type: 'property', name: 'Medina', nameAr: 'المدينة المنورة', city: 'Saudi Arabia', colorGroup: 'yellow',
+  // Position 29 - Yellow group (Khaleej)
+  { position: 29, type: 'property', name: 'Mecca', nameAr: 'مكة المكرمة', city: 'Saudi Arabia', colorGroup: 'yellow',
     price: 280, rent: [24, 120, 360, 850, 1025, 1200], housePrice: 150, mortgageValue: 140 },
 
   // Position 30
