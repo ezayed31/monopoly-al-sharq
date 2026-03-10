@@ -163,8 +163,17 @@ export default function App() {
           </div>
 
           <div className="game-main">
-            {/* Left sidebar: Players */}
-            <div className="game-sidebar game-sidebar--left">
+            {/* Center: Board */}
+            <div className="game-board-area">
+              <Board
+                game={game}
+                myId={myId}
+                onAction={handleAction}
+              />
+            </div>
+
+            {/* Right sidebar: Players + Actions + Log */}
+            <div className="game-sidebar game-sidebar--right">
               <div className="players-panel">
                 {game.players.map((player, i) => (
                   <PlayerDashboard
@@ -177,19 +186,6 @@ export default function App() {
                   />
                 ))}
               </div>
-            </div>
-
-            {/* Center: Board */}
-            <div className="game-board-area">
-              <Board
-                game={game}
-                myId={myId}
-                onAction={handleAction}
-              />
-            </div>
-
-            {/* Right sidebar: Actions + Log */}
-            <div className="game-sidebar game-sidebar--right">
               <ActionPanel
                 game={game}
                 myId={myId}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GameState, BOARD_SQUARES } from '../types/game';
 import BoardSquare from './BoardSquare';
 import PropertyModal from './PropertyModal';
+import Dice from './Dice';
 
 interface Props {
   game: GameState;
@@ -88,13 +89,26 @@ export default function Board({ game, myId, onAction }: Props) {
               <div className="board-logo-title">MONOPOLY</div>
               <div className="board-logo-subtitle">al-Sharq</div>
               <div className="board-logo-arabic">منوبولي الشرق</div>
-              {game.settings.houseRules.freeParkingJackpot && game.freeParking > 0 && (
-                <div className="board-jackpot">
-                  <span>🌴 Oasis Jackpot</span>
-                  <strong>£{game.freeParking.toLocaleString()}</strong>
-                </div>
-              )}
             </div>
+
+            <div className="board-dice-area">
+              <Dice dice={game.dice} />
+              <div className="board-turn-label">
+                {game.players[game.currentPlayerIndex] && (
+                  <span>
+                    {game.players[game.currentPlayerIndex].token}{' '}
+                    {game.players[game.currentPlayerIndex].name}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {game.settings.houseRules.freeParkingJackpot && game.freeParking > 0 && (
+              <div className="board-jackpot">
+                <span>🌴 Oasis Jackpot</span>
+                <strong>£{game.freeParking.toLocaleString()}</strong>
+              </div>
+            )}
           </div>
 
           <div className="board-col board-col--right">

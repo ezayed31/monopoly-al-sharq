@@ -1,6 +1,5 @@
 import React from 'react';
 import { GameState, Player, BOARD_SQUARES } from '../types/game';
-import Dice from './Dice';
 
 interface Props {
   game: GameState;
@@ -42,9 +41,6 @@ export default function ActionPanel({ game, myId, onAction, onOpenTrade }: Props
           </div>
         )}
       </div>
-
-      {/* Dice display */}
-      <Dice dice={game.dice} />
 
       {/* Jail actions */}
       {isMyTurn && me.inJail && !game.diceRolled && (

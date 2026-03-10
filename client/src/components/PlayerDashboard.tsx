@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Player, GameState, BOARD_SQUARES } from '../types/game';
 
 interface Props {
@@ -10,8 +10,6 @@ interface Props {
 }
 
 export default function PlayerDashboard({ player, game, isCurrentTurn, isMe, onTrade }: Props) {
-  const [showProperties, setShowProperties] = useState(false);
-
   const ownedProperties = Object.values(game.propertyStates)
     .filter((s) => s.ownerId === player.id)
     .map((s) => ({ state: s, square: BOARD_SQUARES[s.position] }));
@@ -25,85 +23,44 @@ export default function PlayerDashboard({ player, game, isCurrentTurn, isMe, onT
   return (
     <div
       className={`player-dashboard ${isCurrentTurn ? 'player-dashboard--active' : ''} ${player.isBankrupt ? 'player-dashboard--bankrupt' : ''} ${isMe ? 'player-dashboard--me' : ''}`}
-      style={{ borderColor: player.color }}
     >
-      <div className="player-dashboard-header">
-        <div className="player-token-large" style={{ border: `3px solid ${player.color}` }}>
-          {player.token}
-        </div>
-        <div className="player-info">
-          <div className="player-name">
-            {player.name}
-            {isMe && <span className="you-badge">You</span>}
-            {player.isHost && <span className="host-badge">Host</span>}
-            {isCurrentTurn && <span className="turn-badge">Turn</span>}
-          </div>
-          <div className="player-money">£{player.money.toLocaleString()}</div>
-          <div className="player-networth">Net: £{netWorth.toLocaleString()}</div>
-        </div>
-        {player.isBankrupt && <div className="bankrupt-badge">BANKRUPT</div>}
+      <div className="player-avatar" style={{ borderColor: player.color, boxShadow: isCurrentTurn ? `0 0 10px ${player.color}` : 'none' }}>
+        {player.token}
       </div>
-
-      {/* Jail status */}
-      {player.inJail && (
-        <div className="jail-status">
-          🔒 In Al-Sijn ({player.jailTurns}/3 turns)
+      <div className="player-info">
+        <div className="player-name-row">
+          <span className="player-name-text">{player.name}</span>
+          <div className="player-badges">
+            {isMe && <span className="badge badge-you">You</span>}
+            {player.isHost && <span className="badge badge-host">Host</span>}
+            {isCurrentTurn && <span className="badge badge-turn">▶</span>}
+            {player.isBankrupt && <span className="badge badge-bankrupt">💀</span>}
+          </div>
         </div>
-      )}
-
-      {/* Jail free cards */}
-      {player.getOutOfJailCards > 0 && (
-        <div className="jail-card-badge">
-          🃏 {player.getOutOfJailCards}× Get Out of Al-Sijn Free
+        <div className="player-money-row">
+          <span className="player-money">£{player.money.toLocaleString()}</span>
+          <span className="player-networth">net £{netWorth.toLocaleString()}</span>
         </div>
-      )}
-
-      {/* Properties */}
-      {ownedProperties.length > 0 && (
-        <div className="player-properties-section">
-          <button
-            className="properties-toggle"
-            onClick={() => setShowProperties(!showProperties)}
-          >
-            {ownedProperties.length} Properties {showProperties ? '▲' : '▼'}
-          </button>
-          {showProperties && (
-            <div className="player-properties-list">
-              {ownedProperties.map(({ state, square }) => (
-                <div
-                  key={state.position}
-                  className={`property-chip ${state.mortgaged ? 'property-chip--mortgaged' : ''}`}
-                  title={square.nameAr}
-                >
-                  {square.colorGroup && (
-                    <div
-                      className="property-chip-color"
-                      style={{
-                        background: square.colorGroup ? `var(--color-${square.colorGroup})` : '#888'
-                      }}
-                    />
-                  )}
-                  <span className="property-chip-name">{square.name}</span>
-                  {state.houses > 0 && (
-                    <span className="property-chip-houses">
-                      {state.houses === 5 ? '🏨' : `🏠×${state.houses}`}
-                    </span>
-                  )}
-                  {state.mortgaged && <span className="property-chip-mortgaged">M</span>}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Trade button */}
+        {player.inJail && (
+          <div className="player-jail-tag">🔒 Al-Sijn ({player.jailTurns}/3)</div>
+        )}
+        {ownedProperties.length > 0 && (
+          <div className="player-prop-dots">
+            {ownedProperties.slice(0, 12).map(({ state, square }) => (
+              <div
+                key={state.position}
+                className={`prop-dot ${state.mortgaged ? 'prop-dot--mortgaged' : ''}`}
+                style={{ background: square.colorGroup ? `var(--c-${square.colorGroup})` : '#888' }}
+                title={square.name}
+              />
+            ))}
+            {ownedProperties.length > 12 && <span className="prop-dot-more">+{ownedProperties.length - 12}</span>}
+          </div>
+        )}
+      </div>
       {!isMe && !player.isBankrupt && onTrade && (
-        <button
-          className="btn btn-sm btn-secondary trade-btn"
-          onClick={() => onTrade(player.id)}
-        >
-          🤝 Trade
+        <button className="btn btn-sm btn-ghost player-trade-btn" onClick={() => onTrade(player.id)} title="Trade">
+          🤝
         </button>
       )}
     </div>
