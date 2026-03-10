@@ -56,7 +56,6 @@ export default function BoardSquare({ square, propertyState, players, onClick, h
           className="color-band"
           style={{ background: colorStyle.bg }}
         >
-          {square.flag && <span className="square-flag">{square.flag}</span>}
           {propertyState && <HouseIndicator houses={propertyState.houses} />}
         </div>
       )}
