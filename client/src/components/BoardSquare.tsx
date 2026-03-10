@@ -26,7 +26,7 @@ const playerColors = ['#E74C3C', '#3498DB', '#2ECC71', '#F39C12', '#9B59B6', '#1
 
 function HouseIndicator({ houses }: { houses: number }) {
   if (houses === 0) return null;
-  if (houses === 5) return <div className="hotel-indicator" title="Hotel">🏨</div>;
+  if (houses === 5) return <div className="hotel-indicator" title="Hotel" />;
   return (
     <div className="houses-indicator">
       {Array.from({ length: houses }).map((_, i) => (
@@ -94,7 +94,7 @@ export default function BoardSquare({ square, propertyState, players, onClick, h
       {playersHere.length > 0 && (
         <div className="players-on-square">
           {playersHere.map((p) => (
-            <div key={p.id} className="player-token" title={p.name} style={{ border: `2px solid ${p.color}` }}>
+            <div key={p.id} className="player-token" title={p.name} style={{ border: `2.5px solid ${p.color}`, boxShadow: `0 3px 10px rgba(0,0,0,0.7), 0 0 10px ${p.color}88` }}>
               {p.token}
             </div>
           ))}

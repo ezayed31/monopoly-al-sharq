@@ -427,9 +427,20 @@ body {
 .board-square--right  .color-band { top: 0; bottom: 0; left: 0; width: var(--band); height: 100%; flex-direction: column; }
 
 /* Houses inside band */
-.houses-indicator { display: flex; gap: 2px; z-index: 1; }
-.house-dot { width: 7px; height: 7px; background: #22CC22; border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
-.hotel-indicator { font-size: 10px; line-height: 1; }
+.houses-indicator { display: flex; gap: 2px; z-index: 1; align-items: flex-end; }
+.house-dot {
+  width: 9px; height: 10px;
+  background: #22CC22;
+  clip-path: polygon(50% 0%, 100% 42%, 82% 42%, 82% 100%, 18% 100%, 18% 42%, 0% 42%);
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.6));
+}
+.hotel-indicator {
+  width: 13px; height: 13px;
+  background: #E53935;
+  clip-path: polygon(50% 0%, 100% 38%, 80% 38%, 80% 100%, 20% 100%, 20% 38%, 0% 38%);
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
+  display: block;
+}
 
 /* Square names */
 .square-name {
@@ -458,7 +469,16 @@ body {
 .square-price   { font-size: 6.5px; color: var(--gold); font-weight: 700; margin-bottom: 2px; opacity: 0.9; }
 
 /* Icon for special squares */
-.square-icon { font-size: 16px; margin-bottom: 2px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); }
+.square-icon { font-size: 16px; margin-bottom: 2px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); display: block; }
+/* Rotate icons to face outward per side */
+.board-square--top   .square-icon { transform: rotate(180deg); }
+.board-square--left  .square-icon { transform: rotate(-90deg); }
+.board-square--right .square-icon { transform: rotate(90deg); }
+/* Rotate price text on vertical squares */
+.board-square--left  .square-price { writing-mode: vertical-rl; transform: rotate(180deg); margin-right: calc(var(--band) + 2px); margin-bottom: 0; padding: 2px 0; }
+.board-square--right .square-price { writing-mode: vertical-rl; margin-left: calc(var(--band) + 2px); margin-bottom: 0; padding: 2px 0; }
+/* Top row price needs flip */
+.board-square--top .square-price { transform: rotate(180deg); }
 
 /* Mortgaged overlay */
 .board-square--mortgaged { opacity: 0.5; }
@@ -482,16 +502,20 @@ body {
 /* Players on square */
 .players-on-square {
   position: absolute; bottom: 2px; left: 2px;
-  display: flex; flex-wrap: wrap; gap: 1px;
+  display: flex; flex-wrap: wrap; gap: 2px;
+  z-index: 10;
 }
 .player-token {
-  width: 16px; height: 16px; border-radius: 50%;
+  width: 24px; height: 24px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 10px; background: rgba(20,20,40,0.95);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-  animation: tokenPop 0.25s var(--ease);
+  font-size: 14px; background: rgba(10,10,25,0.97);
+  border: 2.5px solid;
+  animation: tokenPop 0.3s var(--ease);
+  position: relative; z-index: 10;
+  transition: transform 0.2s var(--ease);
 }
-@keyframes tokenPop { from { transform: scale(0); } }
+.player-token:hover { transform: scale(1.2); }
+@keyframes tokenPop { from { transform: scale(0) rotate(-20deg); } to { transform: scale(1) rotate(0deg); } }
 
 /* Square type backgrounds (dark variants) */
 .board-square--go           { background: linear-gradient(160deg, #1A2500, #243500); }

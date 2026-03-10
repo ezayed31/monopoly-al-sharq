@@ -36,17 +36,18 @@ export default function Board({ game, myId, onAction }: Props) {
   // Top row (left→right): 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
   // Right col (top→bottom): 39, 38, 37, 36, 35, 34, 33, 32, 31
 
-  const bottomRow = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
-  const leftCol = [11, 12, 13, 14, 15, 16, 17, 18, 19];
-  const topRow = [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
-  const rightCol = [39, 38, 37, 36, 35, 34, 33, 32, 31];
+  // GO (pos 0) at top-left, movement clockwise
+  const topRow    = [0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10];
+  const rightCol  = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+  const bottomRow = [30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20];
+  const leftCol   = [39, 38, 37, 36, 35, 34, 33, 32, 31];
 
   const getSquareSide = (pos: number): 'bottom' | 'left' | 'top' | 'right' | 'corner' => {
     if ([0, 10, 20, 30].includes(pos)) return 'corner';
-    if (bottomRow.includes(pos)) return 'bottom';
-    if (leftCol.includes(pos)) return 'left';
     if (topRow.includes(pos)) return 'top';
-    return 'right';
+    if (rightCol.includes(pos)) return 'right';
+    if (bottomRow.includes(pos)) return 'bottom';
+    return 'left';
   };
 
   return (
