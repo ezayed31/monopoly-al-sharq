@@ -157,11 +157,11 @@ export const BOARD_SQUARES: BoardSquare[] = [
   { position: 18, type: 'property', name: 'Anaheim',       nameAr: 'أنهايم',          city: 'California',  colorGroup: 'orange',   price: 180, rent: [14, 70,  200, 550, 750,  950],  housePrice: 100, mortgageValue: 90  },
   { position: 19, type: 'property', name: 'Dallas',        nameAr: 'دالاس',           city: 'Texas',       colorGroup: 'orange',   price: 200, rent: [16, 80,  220, 600, 800,  1000], housePrice: 100, mortgageValue: 100 },
   { position: 20, type: 'free_parking',  name: 'Al-Waha',            nameAr: 'الواحة',            description: 'Free Parking - Rest at the Oasis' },
-  // Red — Gulf
-  { position: 21, type: 'property', name: 'Jazwah',        nameAr: 'جزوة',            city: 'Saudi Arabia', colorGroup: 'red',     price: 220, rent: [18, 90,  250, 700, 875,  1050], housePrice: 150, mortgageValue: 110 },
+  // Red — Coffee Shops
+  { position: 21, type: 'property', name: 'Jazwah',        nameAr: 'جزوة',            city: 'Coffee Shops', colorGroup: 'red',     price: 220, rent: [18, 90,  250, 700, 875,  1050], housePrice: 150, mortgageValue: 110 },
   { position: 22, type: 'chance',        name: 'Inshallah',          nameAr: 'إن شاء الله' },
-  { position: 23, type: 'property', name: 'The Kahba',     nameAr: 'الكحبة',          city: 'Saudi Arabia', colorGroup: 'red',     price: 220, rent: [18, 90,  250, 700, 875,  1050], housePrice: 150, mortgageValue: 110 },
-  { position: 24, type: 'property', name: 'Sada',          nameAr: 'صادة',            city: 'Saudi Arabia', colorGroup: 'red',     price: 240, rent: [20, 100, 300, 750, 925,  1100], housePrice: 150, mortgageValue: 120 },
+  { position: 23, type: 'property', name: 'The Kahba',     nameAr: 'الكحبة',          city: 'Coffee Shops', colorGroup: 'red',     price: 220, rent: [18, 90,  250, 700, 875,  1050], housePrice: 150, mortgageValue: 110 },
+  { position: 24, type: 'property', name: 'Sada',          nameAr: 'صادة',            city: 'Coffee Shops', colorGroup: 'red',     price: 240, rent: [20, 100, 300, 750, 925,  1100], housePrice: 150, mortgageValue: 120 },
   { position: 25, type: 'airline',       name: 'Etihad Airways',     nameAr: 'طيران الاتحاد',     price: 200, mortgageValue: 100 },
   // Yellow — Islamic Centers
   { position: 26, type: 'property', name: 'Mosque Foundation', nameAr: 'مؤسسة المسجد', city: 'Bridgeview', colorGroup: 'yellow',  price: 260, rent: [22, 110, 330, 800, 975,  1150], housePrice: 150, mortgageValue: 130 },
@@ -172,7 +172,7 @@ export const BOARD_SQUARES: BoardSquare[] = [
   // Green — The Homes
   { position: 31, type: 'property', name: "Hamooda's House", nameAr: 'بيت حمودة',     city: 'Chicagoland', colorGroup: 'green',   price: 300, rent: [26, 130, 390, 900, 1100, 1275], housePrice: 200, mortgageValue: 150 },
   { position: 32, type: 'property', name: "Swag's House",   nameAr: 'بيت سواج',       city: 'Chicagoland', colorGroup: 'green',   price: 300, rent: [26, 130, 390, 900, 1100, 1275], housePrice: 200, mortgageValue: 150 },
-  { position: 33, type: 'community_chest', name: 'Sadaqah', nameAr: 'صدقة' },
+  { position: 33, type: 'property', name: 'DePaul',         nameAr: 'دي بول',          city: 'Chicago',     colorGroup: 'darkblue', price: 300, rent: [26, 130, 390, 900, 1100, 1275], housePrice: 200, mortgageValue: 150 },
   { position: 34, type: 'property', name: "The Zayed's House", nameAr: 'بيت الزايد',  city: 'Chicagoland', colorGroup: 'green',   price: 320, rent: [28, 150, 450, 1000, 1200, 1400], housePrice: 200, mortgageValue: 160 },
   { position: 35, type: 'airline',       name: 'Air Arabia',         nameAr: 'العربية للطيران',   price: 200, mortgageValue: 100 },
   { position: 36, type: 'chance',        name: 'Inshallah',          nameAr: 'إن شاء الله' },
@@ -199,5 +199,5 @@ export const COLOR_GROUPS: Record<ColorGroup, { properties: number[]; housePrice
   red:       { properties: [21, 23, 24],    housePrice: 150 },
   yellow:    { properties: [26, 27, 29],    housePrice: 150 },
   green:     { properties: [31, 32, 34],    housePrice: 200 },
-  darkblue:  { properties: [37, 39],        housePrice: 200 },
+  darkblue:  { properties: [33, 37, 39],    housePrice: 200 },
 };

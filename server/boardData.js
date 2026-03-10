@@ -68,17 +68,17 @@ const BOARD_SQUARES = [
   // Position 20 — Free Parking
   { position: 20, type: 'free_parking', name: 'Al-Waha', nameAr: 'الواحة', description: 'Free Parking - Rest at the Oasis' },
 
-  // Position 21-24 — Red: Gulf
-  { position: 21, type: 'property', name: 'Jazwah', nameAr: 'جزوة', city: 'Saudi Arabia', colorGroup: 'red',
+  // Position 21-24 — Red: Coffee Shops
+  { position: 21, type: 'property', name: 'Jazwah', nameAr: 'جزوة', city: 'Coffee Shops', colorGroup: 'red',
     price: 220, rent: [18, 90, 250, 700, 875, 1050], housePrice: 150, mortgageValue: 110 },
 
   // Position 22 — Chance
   { position: 22, type: 'chance', name: 'Inshallah', nameAr: 'إن شاء الله' },
 
-  { position: 23, type: 'property', name: 'The Kahba', nameAr: 'الكحبة', city: 'Saudi Arabia', colorGroup: 'red',
+  { position: 23, type: 'property', name: 'The Kahba', nameAr: 'الكحبة', city: 'Coffee Shops', colorGroup: 'red',
     price: 220, rent: [18, 90, 250, 700, 875, 1050], housePrice: 150, mortgageValue: 110 },
 
-  { position: 24, type: 'property', name: 'Sada', nameAr: 'صادة', city: 'Saudi Arabia', colorGroup: 'red',
+  { position: 24, type: 'property', name: 'Sada', nameAr: 'صادة', city: 'Coffee Shops', colorGroup: 'red',
     price: 240, rent: [20, 100, 300, 750, 925, 1100], housePrice: 150, mortgageValue: 120 },
 
   // Position 25 — Airline
@@ -107,8 +107,9 @@ const BOARD_SQUARES = [
   { position: 32, type: 'property', name: "Swag's House", nameAr: 'بيت سواج', city: 'Chicagoland', colorGroup: 'green',
     price: 300, rent: [26, 130, 390, 900, 1100, 1275], housePrice: 200, mortgageValue: 150 },
 
-  // Position 33 — Community Chest
-  { position: 33, type: 'community_chest', name: 'Sadaqah', nameAr: 'صدقة' },
+  // Position 33 — Dark Blue: Colleges
+  { position: 33, type: 'property', name: 'DePaul', nameAr: 'دي بول', city: 'Chicago', colorGroup: 'darkblue',
+    price: 300, rent: [26, 130, 390, 900, 1100, 1275], housePrice: 200, mortgageValue: 150 },
 
   { position: 34, type: 'property', name: "The Zayed's House", nameAr: 'بيت الزايد', city: 'Chicagoland', colorGroup: 'green',
     price: 320, rent: [28, 150, 450, 1000, 1200, 1400], housePrice: 200, mortgageValue: 160 },
@@ -139,7 +140,7 @@ const COLOR_GROUPS = {
   red:      { properties: [21, 23, 24],    housePrice: 150, color: '#FF0000' },
   yellow:   { properties: [26, 27, 29],    housePrice: 150, color: '#FFD700' },
   green:    { properties: [31, 32, 34],    housePrice: 200, color: '#008000' },
-  darkblue: { properties: [37, 39],        housePrice: 200, color: '#00008B' },
+  darkblue: { properties: [33, 37, 39],    housePrice: 200, color: '#00008B' },
 };
 
 const AIRLINE_POSITIONS = [5, 15, 25, 35];
