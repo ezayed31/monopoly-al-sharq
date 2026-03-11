@@ -442,19 +442,18 @@ body {
   display: block;
 }
 
+/* Top squares: content near outer edge (top), band at inner (bottom) */
+.board-square--top { justify-content: flex-start; }
+
 /* Square names */
 .square-name {
   display: flex; flex-direction: column; align-items: center;
   text-align: center; padding: 2px 2px; gap: 1px;
 }
-.board-square--bottom .square-name,
-.board-square--top    .square-name {
-  margin-top: calc(var(--band) + 2px); padding: 2px 2px 1px;
-}
-.board-square--top .square-name {
-  margin-top: 2px; margin-bottom: calc(var(--band) + 2px);
-  justify-content: flex-end; flex: 1;
-}
+/* Bottom: content below the band at top */
+.board-square--bottom .square-name { margin-top: calc(var(--band) + 2px); padding: 2px 2px 1px; }
+/* Top: content just sits naturally at top (outer edge) */
+.board-square--top .square-name { margin-top: 3px; padding: 2px 2px 1px; }
 .board-square--left .square-name {
   writing-mode: vertical-rl; transform: rotate(180deg);
   margin-right: calc(var(--band) + 2px); padding: 3px 2px;
@@ -468,17 +467,13 @@ body {
 .square-name-ar { font-size: 6px; color: rgba(212,175,55,0.7); direction: rtl; }
 .square-price   { font-size: 6.5px; color: var(--gold); font-weight: 700; margin-bottom: 2px; opacity: 0.9; }
 
-/* Icon for special squares */
-.square-icon { font-size: 16px; margin-bottom: 2px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); display: block; }
-/* Rotate icons to face outward per side */
-.board-square--top   .square-icon { transform: rotate(180deg); }
+/* Icon for special squares — upright on top/bottom, rotated on sides */
+.square-icon { font-size: 18px; margin-bottom: 3px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4)); display: block; }
 .board-square--left  .square-icon { transform: rotate(-90deg); }
 .board-square--right .square-icon { transform: rotate(90deg); }
-/* Rotate price text on vertical squares */
+/* Price text rotated on vertical squares */
 .board-square--left  .square-price { writing-mode: vertical-rl; transform: rotate(180deg); margin-right: calc(var(--band) + 2px); margin-bottom: 0; padding: 2px 0; }
 .board-square--right .square-price { writing-mode: vertical-rl; margin-left: calc(var(--band) + 2px); margin-bottom: 0; padding: 2px 0; }
-/* Top row price needs flip */
-.board-square--top .square-price { transform: rotate(180deg); }
 
 /* Mortgaged overlay */
 .board-square--mortgaged { opacity: 0.5; }
@@ -499,22 +494,25 @@ body {
 .board-square--right .owner-dot { bottom: 3px; left: calc(var(--band) + 3px); }
 .board-square--top   .owner-dot { bottom: calc(var(--band) + 3px); right: 3px; }
 
-/* Players on square */
+/* Players on square — centered */
 .players-on-square {
-  position: absolute; bottom: 2px; left: 2px;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
   display: flex; flex-wrap: wrap; gap: 2px;
-  z-index: 10;
+  justify-content: center; align-items: center;
+  z-index: 10; max-width: 90%;
 }
 .player-token {
-  width: 24px; height: 24px; border-radius: 50%;
+  width: 28px; height: 28px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 14px; background: rgba(10,10,25,0.97);
+  font-size: 17px; background: rgba(10,10,25,0.97);
   border: 2.5px solid;
   animation: tokenPop 0.3s var(--ease);
   position: relative; z-index: 10;
   transition: transform 0.2s var(--ease);
 }
-.player-token:hover { transform: scale(1.2); }
+.player-token:hover { transform: scale(1.25); }
 @keyframes tokenPop { from { transform: scale(0) rotate(-20deg); } to { transform: scale(1) rotate(0deg); } }
 
 /* Square type backgrounds (dark variants) */
