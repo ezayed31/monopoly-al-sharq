@@ -94,7 +94,7 @@ export default function BoardSquare({ square, propertyState, players, onClick, h
       {playersHere.length > 0 && (
         <div className="players-on-square">
           {playersHere.map((p) => (
-            <div key={p.id} className="player-token" title={p.name} style={{ border: `2.5px solid ${p.color}`, boxShadow: `0 3px 10px rgba(0,0,0,0.7), 0 0 10px ${p.color}88` }}>
+            <div key={p.id} className="player-token" title={p.name} style={{ border: `3px solid ${p.color}`, boxShadow: `0 0 18px ${p.color}CC, 0 0 8px ${p.color}88, 0 4px 14px rgba(0,0,0,0.8)` }}>
               {p.token}
             </div>
           ))}
